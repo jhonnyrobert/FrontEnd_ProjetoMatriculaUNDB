@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+	<link rel="icon" type="image/png" href="#">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>Matricula Undb Online</title>
+
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+
+	<!--     Fonts and icons     -->
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+
+	<!-- CSS Files -->
+	<link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="../assets/css/material-kit.css?v=1.3.0" rel="stylesheet"/>
+</head>
+
+<body class="pricing">
+	<div class="page-header header-filter header-small" data-parallax="false" style="background-image: url('https://www.undb.edu.br/hs-fs/hubfs/Site/Banners/Banner%20II-03.jpg?t=1532870252532&width=1920&name=Banner%20II-03.jpg');">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<h1 class="title">Matricula Online</h1>
+					<h4>Tecnologia, inovação e empreendedorismo marcam a formação dos alunos da UNDB. </h4>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="main main-raised">
+		<div class="progress">
+			<div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+		</div>
+		<div class="container">
+			<div class="features-2">
+				<div class="text-center">
+					<h3 class="title">Dados Cadastrais Do Candidato</h3>
+				</div>
+				<form class="contact-form">
+					<!--DADOS NOME / EMAIL/ CURSO DESEJADO -->
+					<form method="POST" action="">
+						{{--<form method="POST" action="{{ route('nova_matricula') }}">--}}
+							<div class="row">
+								<div class="col-md-8">
+									<div class="form-group bmd-form-group{{ $errors->has('matricula') ? ' has-danger' : '' }}">
+										<label class="bmd-label-floating">Nome</label>
+										<input type="text" class="form-control" name="nome" value="{{ old('nome') }}">
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group bmd-form-group{{ $errors->has('matricula') ? ' has-danger' : '' }}">
+										<label class="bmd-label-floating">Email</label>
+										<input type="email" class="form-control" name="email" value="{{ old('email') }}">
+									</div>
+								</div>
+							</div>
+							<!-- DADOS DE EMAIL E FONE-->
+							<div class="row">
+
+								<div class="col-md-3">
+									<div class="form-group bmd-form-group{{ $errors->has('matricula') ? ' has-danger' : '' }}">
+										<label class="bmd-label-floating">Telefone 1</label>
+										<input type="text" class="form-control" name="telefone_1" value="{{ old('telefone_1') }}">
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group bmd-form-group{{ $errors->has('matricula') ? ' has-danger' : '' }}">
+										<label class="bmd-label-floating">Telefone 2</label>
+										<input type="text" class="form-control" name="telefone_2" value="{{ old('telefone_2') }}">
+									</div>
+								</div>
+
+								<div class="col-md-2">
+									<div class="form-group bmd-form-group{{ $errors->has('matricula') ? ' has-danger' : '' }}">
+										<label class="bmd-label-floating">Data de Nascimento</label>
+										<input type="text" class="form-control" name="nascimento" value="{{ old('nascimento') }}">
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group bmd-form-group{{ $errors->has('cpf') ? ' has-danger' : '' }}">
+										<label class="bmd-label-floating">CPF</label>
+										<input type="text" class="form-control cpf" name="cpf" value="{{ old('cpf') }}">
+									</div>
+								</div>
+							</div><!--FIM-->
+
+							<!--DADOS DO RG-->
+							<div class="row">
+								<div class="col-md-3">
+									<div class="form-group bmd-form-group{{ $errors->has('rg') ? ' has-danger' : '' }}">
+										<label class="bmd-label-floating">RG</label>
+										<input type="text" class="form-control maxnumber" name="rg" value="{{ old('rg') }}">
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group bmd-form-group{{ $errors->has('orgaoemissor') ? ' has-danger' : '' }}">
+										<label class="bmd-label-floating">Orgão Emissor</label>
+										<input type="text" class="form-control" name="orgaoemissor" value="{{ old('orgaoemissor') }}">
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group bmd-form-group{{ $errors->has('estado') ? ' has-danger' : '' }}">
+										<label class="bmd-label-floating">EstadoEmissor</label>
+										<input type="text" class="form-control" name="estadoemissor" value="{{ old('estadoemissor') }}">
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group bmd-form-group{{ $errors->has('dataexpedicao') ? ' has-danger' : '' }}">
+										<label class="bmd-label-floating">Data de Expedição</label>
+										<input type="text" class="form-control" name="datadeexpedição" value="{{ old('datadeexpedição') }}">
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group bmd-form-group{{ $errors->has('naturalidade') ? ' has-danger' : '' }}">
+										<label class="bmd-label-floating">Naturalidade</label>
+										<input type="text" class="form-control" name="naturalidade" value="{{ old('naturalidade') }}">
+									</div>
+								</div>
+
+							</div><!--FIM-->
+
+
+							<!--DADOS DE ENDEREÇO-->
+							<div class="row">
+								<div class="col-md-3">
+									<div class="form-group bmd-form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
+										<label class="bmd-label-floating">CEP</label>
+										<input type="text" class="form-control" name="cep" required value="{{ old('cep') }}">
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group bmd-form-group{{ $errors->has('endereco') ? ' has-danger' : '' }}">
+										<label class="bmd-label-floating">Logradouro</label>
+										<input type="text" class="form-control" name="logradouro" required value="{{ old('logradouro') }}">
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group bmd-form-group{{ $errors->has('numero') ? ' has-danger' : '' }}">
+										<label class="bmd-label-floating">Numero</label>
+										<input type="text" class="form-control maxnumber" name="numero" maxlength="10" value="{{ old('numero') }}">
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group bmd-form-group{{ $errors->has('numero') ? ' has-danger' : '' }}">
+										<label class="bmd-label-floating">Cidade</label>
+										<input type="text" class="form-control maxnumber" name="numero" maxlength="10" value="{{ old('numero') }}">
+									</div>
+								</div>
+							</div><!--FIM-->
+
+							<div class="row">
+								<div class="col-md-3 ">
+									<label class="control-label">TURNO</label>
+									<select class="select form-control" placeholder="Speciality">
+										<option value="1">Manhã</option>
+										<option value="2">Tarde</option>
+										<option value="3">Noite</option>
+
+									</select>
+									<span class="material-input"></span></div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-md-4 col-md-offset-4 text-center">
+									<a href="UNDB-3.html" class="btn btn-primary btn-round">
+										Avançar
+									</a>								
+								</div>
+							</div>
+						</form><!--FIM FORMS-->                     
+					</div>
+				</div>
+			</div>
+
+			<footer class="footer">
+				<div class="container">
+					<nav class="pull-left">
+						<ul>
+							<li>
+								<a href="http://sou.undb.edu.br/?utm_source=direto">
+									Undb
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="http://mail.undb.edu.br/" class="servicos__link servicos__link--webmail">Webmail</a>
+							</li>
+							<li>
+								<a href="http://sou.undb.edu.br/arquivos/downloads/calendario_undb-20181.pdf?utm_source=direto?utm_source=direto" class="servicos__link servicos__link--calendario" target="_blank">Calendário Acadêmico</a>
+							</li>
+							<li>
+								<a href="http://sou.undb.edu.br/ouvidoria?utm_source=direto?utm_source=direto" class="servicos__link servicos__link--ouvidoria">Ouvidoria</a>
+							</li>
+						</ul>
+					</nav>
+					<div class="copyright pull-right">
+						&copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by Creative Tim
+					</div>
+				</div>
+			</footer>
+
+
+		</body>
+		<!--   Core JS Files   -->
+		<script src="../assets/js/jquery.min.js" type="text/javascript"></script>
+		<script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
+		<script src="../assets/js/material.min.js"></script>
+
+
+		<script src="/javascripts/application.js" type="text/javascript" charset="utf-8" async defer>
+			$(document).ready( function() {
+				/* Executa a requisição quando o campo CEP perder o foco */
+				$('#cep').blur(function(){
+					/* Configura a requisição AJAX */
+					$.ajax({
+						url : 'consultar_cep.php', /* URL que será chamada */ 
+						type : 'POST', /* Tipo da requisição */ 
+						data: 'cep=' + $('#cep').val(), /* dado que será enviado via POST */
+						dataType: 'json', /* Tipo de transmissão */
+						success: function(data){
+							if(data.sucesso == 1){
+								$('#rua').val(data.rua);
+								$('#bairro').val(data.bairro);
+								$('#cidade').val(data.cidade);
+								$('#estado').val(data.estado);
+
+								$('#numero').focus();
+							}
+						}
+					});   
+					return false;    
+				})
+			});
+		</script>
+
+		<!--    Plugin for Date Time Picker and Full Calendar Plugin   -->
+		<script src="../assets/js/moment.min.js"></script>
+
+		<!--	Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/   -->
+		<script src="../assets/js/nouislider.min.js" type="text/javascript"></script>
+
+		<!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker   -->
+		<script src="../assets/js/bootstrap-datetimepicker.js" type="text/javascript"></script>
+
+		<!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select   -->
+		<script src="../assets/js/bootstrap-selectpicker.js" type="text/javascript"></script>
+
+		<!--	Plugin for Tags, full documentation here: http://xoxco.com/projects/code/tagsinput/   -->
+		<script src="../assets/js/bootstrap-tagsinput.js"></script>
+
+		<!--	Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput   -->
+		<script src="../assets/js/jasny-bootstrap.min.js"></script>
+
+		<!--    Plugin For Google Maps   -->
+		<script  type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+
+		<!--    Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc    -->
+		<script src="../assets/js/material-kit.js?v=1.3.0" type="text/javascript"></script>
+		</html>
